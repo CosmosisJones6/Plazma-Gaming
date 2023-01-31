@@ -85,30 +85,6 @@ namespace WebApi.DataAccessLayer
                 }
             }
         }
-
-        // we don't want to update login information, admin has rights to delete and create new logins but not to change passwords and usernames
-        /*public bool UpdateLogin(Login login)
-        {
-            string commandText = "UPDATE Login SET UserName=@username, Hash=@hash WHERE UserName=@un";
-            using (connection)
-            {
-                connection.Open();
-
-                SqlCommand command = new SqlCommand(commandText, connection);
-                command.Parameters.AddWithValue("@username", login.UserName);
-                command.Parameters.AddWithValue("@hash", login.Password);
-                command.Parameters.AddWithValue("@un", login.UserName);
-
-                try
-                {
-                    return command.ExecuteNonQuery() == 1;
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception($"Exception while trying to update Login. The exception was: '{ex.Message}'", ex);
-                }
-            }
-        }*/
         #endregion
 
         #region Helper Methods
