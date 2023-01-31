@@ -1,1 +1,1 @@
-# 3rd-Semester-Project-Group-2
+# 3rd-Semester-Project
