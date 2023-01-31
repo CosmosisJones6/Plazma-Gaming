@@ -3,7 +3,7 @@
 
 ## About the project
 
-Plazma Gaming is an online video game selling website focusing on video games created by individual or small group of developers. We give new game ideas the opportunity to grow and become something bigger by providing a platform for them. 
+Plazma Gaming is an online video game selling service focusing on video games created by individual or small group of developers. We give new game ideas the opportunity to grow and become something bigger by providing a platform for them. 
 
 This solution hadles both the backend and the frontend with more focus and detail on the backend. This semester project for university was created in Visual Studio .NET 6, using C#, HTML, JavaScript, CSS.
 
