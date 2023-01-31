@@ -1,0 +1,43 @@
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+.navbar[b-giswp39xn8] {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 99, 71);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 60px;
+    margin-left: 0px !important;
+}
+
+    .navbar li[b-giswp39xn8] {
+        display: inline;
+        font-weight: 300;
+        font-size: x-large;
+        color: white;
+        padding: 18px;
+        float: left;
+        text-align: center;
+        text-decoration: none;
+    }
+
+        .navbar li:hover[b-giswp39xn8] {
+            background-color: rgb(216, 84, 60)
+        }
+
+body[b-giswp39xn8], html[b-giswp39xn8] {
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+*[b-giswp39xn8] {
+    box-sizing: border-box;
+}
+
+html[b-giswp39xn8] {
+    scroll-behavior: smooth;
+}

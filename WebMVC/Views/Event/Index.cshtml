@@ -1,0 +1,103 @@
+﻿@{
+    @model WebMVC.Models.Event;
+    ViewData["Title"] = ViewData.Model.Name;
+    @using Newtonsoft.Json;
+}
+
+@section script{
+    <script>
+        // Set the date we're counting down to
+        const event = JSON.parse('@Html.Raw(JsonConvert.SerializeObject(Model))');
+        var countDownDate = new Date(event.StartDate).getTime();
+        memberAmount = 0;
+        // Update spots left every 1 seconds
+        var y = setInterval(function () {
+
+            /*fetches members already registered for event*/
+            fetch('https://localhost:7064/Event/GetMemberAmount?eventId=' + event.EventID)
+                /*deserializes json*/
+                .then(response => response.json())
+                /*saves data*/
+                .then(data => (memberAmount = data));
+            var spotsLeft = event.Capacity - memberAmount;
+            // Updates html
+            document.getElementById("spotsleft").innerHTML = "Spots left: " + spotsLeft;
+        }, 1000);
+
+        // Update the count down every 1 second
+        var x = setInterval(function () {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+            var endDate = new Date(event.EndDate).getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the element with id="countdown"
+            document.getElementById("countdown").innerHTML = "Start: " + days + "d " + hours + "h "
+                + minutes + "m " + seconds + "s ";
+
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = "LIVE";
+            }
+            if (now > endDate) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "FINISHED";
+            }
+        }, 1000);
+
+
+        // verifies form and registers for event
+        async function registerForEvent() {
+            var email = document.getElementById("eventemailfield").value;
+            var name = document.getElementById("namefield").value;
+            var link = 'https://localhost:7064/Event/JoinEvent/';
+            if (email === "" || name === "") {
+                alert("Please provide your information!");
+                return false;
+            }
+
+            // creates object later parsed into EventController.EventJoinData object
+            const data = { EventId: event.EventID, MemberEmail: email, MemberName: name};
+            // posts the data using the JoinEvent method in EventController
+            const response = await fetch(link, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            return true;
+        }
+    </script>
+}
+
+    <h1 id="eventname">@Html.DisplayFor(m => m.Name)</h1>
+    <h1 id="countdown"></h1>
+    <div id="eventimage">
+        <img src="/images/placeholder2.jpg" />
+    </div>
+    <div id="eventdescription">
+        <h2>Description</h2>
+        <p>@Html.DisplayFor(m => m.Description)</p>
+    </div>
+    <form id="eventform" onsubmit="return registerForEvent();">
+        <div id="spotsdiv">
+            <h2>Register</h2>
+            <h4 id="spotsleft">Spots left: </h4>
+        </div>
+        <label for="name">Name:</label>
+        <input type="text" id="namefield" /><br />
+        <br />
+        <label for="email">Email:</label>
+        <input type="email" id="eventemailfield" /><br />
+        <input type="submit" class="tomatobutton" id="eventsubmit" />
+    </form>

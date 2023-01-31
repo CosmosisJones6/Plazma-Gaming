@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Contact Us";
+}
+
+@section script{
+    <script>
+        function validateContactForm() {
+            var textinput = document.getElementById("contacttext").value;
+            if (textinput.length < 50) {
+                alert("Please elaborate on your message");
+                return false;
+            }
+            alert("Your message was successfully sent, thank you for contacting us.")
+            return true;
+        }
+    </script>
+}
+
+
+<h1 style="padding-top:150px; text-align:center;">Contact Us</h1>
+<div class="contact-container">
+    <p>Please describe your requests or issues in the contact form below</p>
+    <form onsubmit="return validateContactForm();">
+        <input type="email" id="contactemail" value="Your email"/><br />
+        <textarea id="contacttext" value="Your message"></textarea><br />
+        <input type="submit" id="contactsubmit" class="tomatobutton"/>
+    </form>
+</div>

@@ -1,0 +1,17 @@
+
+*.lock
+3rdSemesterProject/.vs/3rdSemesterProject/DesignTimeBuild/.dtbcache.v2
+*.vsidx
+*.dll
+*.cache
+*.editorconfig
+*.dll
+*.json
+*.json
+*.json
+*.json
+3rdSemesterProject/.vs/3rdSemesterProject/xs/project-cache/WebMVC-Debug.json
+*.dll
+*.pdb
+*.cache
+*.sentinel

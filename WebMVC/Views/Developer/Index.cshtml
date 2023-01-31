@@ -1,0 +1,18 @@
+﻿@model IEnumerable<WebMVC.Models.Developer>
+@{
+    ViewData["Title"] = "Developers";
+}
+
+<h1 style="padding-top:150px; text-align:center;">Developers</h1>
+<div class="picture-text-list">
+    @foreach(var item in Model)
+			{
+                <div class="picture-text">
+                    <img src="/images/placeholder2.jpg" />
+                    <div id="text">
+                        <h2>@Html.DisplayFor(x => item.Name)</h2>
+                        <p>@Html.DisplayFor(x => item.Description)</p>
+                    </div>
+                </div>
+			}
+</div>

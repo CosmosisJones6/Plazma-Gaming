@@ -1,0 +1,104 @@
+@model WebMVC.Models.Game
+@using Newtonsoft.Json;
+
+@{
+    ViewData["Title"] = ViewData.Model.Title;
+    string downloadLink = "\"" + "../DownloadGame?gameId=" + ViewData.Model.GameID + "\"";
+}
+
+@section script {
+
+    <script type ="text/javascript">
+        function validateBuyForm() {
+            var emailInput = document.getElementById("emailfield");
+            if (emailInput.value === "") {
+                alert("Input an email address!");
+                return false;
+            }
+
+            var paymentMethodInput = document.getElementById("paymentmethod");
+            if (paymentMethodInput.value === "none") {
+                alert("Select payment method!");
+                return false;
+            }
+
+            var tosInput = document.getElementById("toscheckbox");
+            if (tosInput.checked === false) {
+                alert("You have to accept the terms of service to purchase");
+                return false;
+            }
+            return true;
+        }
+
+        function addSale() {
+            var email = document.getElementById("emailfield").value;
+            // creates object later parsed into PartialSale
+            const sale = { GameID: @ViewData.Model.GameID, Email: email, SalesPrice: @ViewData.Model.Price };
+            // posts the data using the CreateSale method in SaleController
+            fetch('https://localhost:7064/Sale/CreateSale/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(sale),
+            })
+                .then((response) => response.json())
+                .then((sale) => {
+                    console.log('Success:', sale);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
+
+        function downloadGame(link) {
+            window.open(link);
+        }
+
+        function buyGame(link) {
+            if (validateBuyForm()) {
+                addSale();
+                downloadGame(link);
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
+}
+
+    <div id="pagecontent">
+        <div class="titlearea">
+            <h1>@Html.DisplayFor(m => m.Title)</h1>
+            <a href="#buyform"><input type="button" value="BUY" class="tomatobutton"></a>
+
+        </div>
+        <div id="showcasearea">
+            <p style="text-align:left;">Genre: @Html.DisplayFor(m => m.Type)</p>
+            <img src="/images/placeholder2.jpg">
+            <p style="padding-top:25px;">
+                @Html.DisplayFor(m => m.Description)
+            </p>
+        </div>
+        <div id="horizontal-wrapper">
+            <form id="buyform" onsubmit="return buyGame(@downloadLink);">
+                <label for="emailfield">Email:</label><br>
+                <input type="email" id="emailfield"><br>
+                <label for="paymentmethod">Payment method:</label><br />
+                <select id="paymentmethod">
+                    <option selected disabled value="none">Please Choose</option>
+                    <option value="creditcard">Credit Card</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="mobilepay">MobilePay</option>
+                </select>
+                <label for="toscheckbox">I accept terms of service</label>
+                <input type="checkbox" id="toscheckbox"><br>
+                <input type="submit" id="formsubmit" value="BUY - @Html.DisplayFor(m => m.Price) DKK" class="tomatobutton">
+                <p class="button-undertext"> <br></p>
+            </form>
+            <div id="systemrequirements">
+                <h2>System Requirements</h2>
+                <p>@Html.DisplayFor(m => m.Specifications)</p>
+            </div>
+        </div>
+    </div>
