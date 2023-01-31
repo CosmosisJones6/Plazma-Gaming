@@ -12,100 +12,12 @@ namespace WebApi.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        public static User user = new User();
         private readonly IConfiguration _configuration;
 
         public AuthController(IConfiguration configuration)
         {
             _configuration = configuration;
         }
-
-        /*[HttpGet]
-        public ActionResult<List<Claim>> GetTokenExpiration()
-        {
-            IEnumerable<Claim> tokenExpiration = _userService.GetTokenInfo();
-            return Ok(tokenExpiration);
-        }
-        
-        [HttpPost("register")]
-        public async Task<ActionResult<User>> Register(UserDto request)
-        {
-            CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
-
-            user.Username = request.Username;
-            user.PasswordHash = passwordHash;
-            user.PasswordSalt = passwordSalt;
-
-            return Ok(user);
-        }
-
-        [HttpPost("login")]
-        public async Task<ActionResult<string>> Login(UserDto request)
-        {
-            if (user.Username != request.Username)
-            {
-                return BadRequest("User not found.");
-            }
-
-            if (!VerifyPasswordHash(request.Password, user.PasswordHash, user.PasswordSalt))
-            {
-                return BadRequest("Wrong password.");
-            }
-
-            string token = CreateToken(user);
-
-            var refreshToken = GenerateRefreshToken();
-            SetRefreshToken(refreshToken);
-
-            return Ok(token);
-        }
-
-        [HttpPost("refresh-token")]
-        public async Task<ActionResult<string>> RefreshToken()
-        {
-            var refreshToken = Request.Cookies["refreshToken"];
-
-            if (!user.RefreshToken.Equals(refreshToken))
-            {
-                return Unauthorized("Invalid Refresh Token.");
-            }
-            else if (user.TokenExpires < DateTime.Now)
-            {
-                return Unauthorized("Token expired.");
-            }
-
-            string token = CreateToken(user);
-            var newRefreshToken = GenerateRefreshToken();
-            SetRefreshToken(newRefreshToken);
-
-            return Ok(token);
-        }
-
-        private RefreshToken GenerateRefreshToken()
-        {
-            var refreshToken = new RefreshToken
-            {
-                Token = Convert.ToBase64String(RandomNumberGenerator.GetBytes(64)),
-                Expires = DateTime.Now.AddYears(5),
-                Created = DateTime.Now
-            };
-
-            return refreshToken;
-        }
-
-        private void SetRefreshToken(RefreshToken newRefreshToken)
-        {
-            var cookieOptions = new CookieOptions
-            {
-                HttpOnly = true,
-                Expires = newRefreshToken.Expires
-            };
-            Response.Cookies.Append("refreshToken", newRefreshToken.Token, cookieOptions);
-
-            user.RefreshToken = newRefreshToken.Token;
-            user.TokenCreated = newRefreshToken.Created;
-            user.TokenExpires = newRefreshToken.Expires;
-        }*/
 
         [HttpPost]
         [Authorize(Roles = "Maintenance")]
@@ -130,24 +42,5 @@ namespace WebApi.Controllers
 
             return Ok(jwt);
         }
-
-
-        /*private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
-        {
-            using (var hmac = new HMACSHA512())
-            {
-                passwordSalt = hmac.Key;
-                passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
-            }
-        }
-
-        private bool VerifyPasswordHash(string password, byte[] passwordHash, byte[] passwordSalt)
-        {
-            using (var hmac = new HMACSHA512(passwordSalt))
-            {
-                var computedHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
-                return computedHash.SequenceEqual(passwordHash);
-            }
-        }*/
     }
 }

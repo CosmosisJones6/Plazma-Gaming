@@ -16,7 +16,7 @@ namespace WebMVC.Controllers
         ApiGameDataAccess _dataAccess = new("https://localhost:7023/api/v1/game");
 
         // GET: Game
-        // Returns a lsit view of games after taking an IEnmureable<Game> as parameter
+        // Returns a list view of games after taking an IEnmureable<Game> as parameter
         public ActionResult Index()
         {
             return View(_dataAccess.GetAllGames());
