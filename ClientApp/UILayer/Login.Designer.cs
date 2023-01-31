@@ -69,6 +69,7 @@
             // labelUserName
             // 
             this.labelUserName.AutoSize = true;
+            this.labelUserName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelUserName.Location = new System.Drawing.Point(108, 98);
             this.labelUserName.Name = "labelUserName";
             this.labelUserName.Size = new System.Drawing.Size(60, 15);
@@ -78,6 +79,7 @@
             // labelPassword
             // 
             this.labelPassword.AutoSize = true;
+            this.labelPassword.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelPassword.Location = new System.Drawing.Point(108, 147);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(57, 15);
@@ -87,6 +89,7 @@
             // radioButtonAdmin
             // 
             this.radioButtonAdmin.AutoSize = true;
+            this.radioButtonAdmin.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.radioButtonAdmin.Location = new System.Drawing.Point(152, 202);
             this.radioButtonAdmin.Name = "radioButtonAdmin";
             this.radioButtonAdmin.Size = new System.Drawing.Size(61, 19);
@@ -98,6 +101,7 @@
             // radioButtonEmployee
             // 
             this.radioButtonEmployee.AutoSize = true;
+            this.radioButtonEmployee.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.radioButtonEmployee.Location = new System.Drawing.Point(267, 202);
             this.radioButtonEmployee.Name = "radioButtonEmployee";
             this.radioButtonEmployee.Size = new System.Drawing.Size(77, 19);
@@ -110,7 +114,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(509, 340);
             this.Controls.Add(this.radioButtonEmployee);
             this.Controls.Add(this.radioButtonAdmin);

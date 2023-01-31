@@ -30,7 +30,6 @@ C:\repositories\3rd-Semester-Project\WebMVC\bin\Debug\net6.0\Microsoft.CodeAnaly
 C:\repositories\3rd-Semester-Project\WebMVC\bin\Debug\net6.0\Microsoft.DiaSymReader.dll
 C:\repositories\3rd-Semester-Project\WebMVC\bin\Debug\net6.0\Microsoft.DotNet.Scaffolding.Shared.dll
 C:\repositories\3rd-Semester-Project\WebMVC\bin\Debug\net6.0\Microsoft.NET.StringTools.dll
-C:\repositories\3rd-Semester-Project\WebMVC\bin\Debug\net6.0\Microsoft.OpenApi.dll
 C:\repositories\3rd-Semester-Project\WebMVC\bin\Debug\net6.0\Microsoft.VisualStudio.Debugger.Contracts.dll
 C:\repositories\3rd-Semester-Project\WebMVC\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
 C:\repositories\3rd-Semester-Project\WebMVC\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
@@ -51,9 +50,6 @@ C:\repositories\3rd-Semester-Project\WebMVC\bin\Debug\net6.0\NuGet.ProjectModel.
 C:\repositories\3rd-Semester-Project\WebMVC\bin\Debug\net6.0\NuGet.Protocol.dll
 C:\repositories\3rd-Semester-Project\WebMVC\bin\Debug\net6.0\NuGet.Versioning.dll
 C:\repositories\3rd-Semester-Project\WebMVC\bin\Debug\net6.0\RestSharp.dll
-C:\repositories\3rd-Semester-Project\WebMVC\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
-C:\repositories\3rd-Semester-Project\WebMVC\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\repositories\3rd-Semester-Project\WebMVC\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\repositories\3rd-Semester-Project\WebMVC\bin\Debug\net6.0\System.Composition.AttributedModel.dll
 C:\repositories\3rd-Semester-Project\WebMVC\bin\Debug\net6.0\System.Composition.Convention.dll
 C:\repositories\3rd-Semester-Project\WebMVC\bin\Debug\net6.0\System.Composition.Hosting.dll
@@ -230,7 +226,6 @@ C:\repositories\3rd-Semester-Project\WebMVC\obj\Debug\net6.0\WebMVC.GeneratedMSB
 C:\repositories\3rd-Semester-Project\WebMVC\obj\Debug\net6.0\WebMVC.AssemblyInfoInputs.cache
 C:\repositories\3rd-Semester-Project\WebMVC\obj\Debug\net6.0\WebMVC.AssemblyInfo.cs
 C:\repositories\3rd-Semester-Project\WebMVC\obj\Debug\net6.0\WebMVC.csproj.CoreCompileInputs.cache
-C:\repositories\3rd-Semester-Project\WebMVC\obj\Debug\net6.0\WebMVC.MvcApplicationPartsAssemblyInfo.cs
 C:\repositories\3rd-Semester-Project\WebMVC\obj\Debug\net6.0\WebMVC.MvcApplicationPartsAssemblyInfo.cache
 C:\repositories\3rd-Semester-Project\WebMVC\obj\Debug\net6.0\WebMVC.RazorAssemblyInfo.cache
 C:\repositories\3rd-Semester-Project\WebMVC\obj\Debug\net6.0\WebMVC.RazorAssemblyInfo.cs

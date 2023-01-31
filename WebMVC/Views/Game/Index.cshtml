@@ -2,9 +2,6 @@
 
 @{
     ViewData["Title"] = "Games";
-    string GenerateImagePath(int index){
-        return "/images/game" + index%7 + ".jpg";
-    }
     Game[] items = Model.ToArray();
 }
 
@@ -13,8 +10,8 @@
     @for (int i=0; i<items.Length; i++)
         {
             <div class="gamelistitem">
-                    <div class="gamelistimg"><a href="@Url.Action("Details","Game", new {id = items[i].GameID })"><img src="@GenerateImagePath(i)"/></a></div>
-                    <div class="overlay">
+            <div class="gamelistimg"><a href="@Url.Action("Details","Game", new {id = items[i].GameID })"><img src="/media/game.png" /></a></div>
+            <div class="overlay">
                         <h2>@Html.DisplayFor(x => items[i].Title)</h2>
                         <p>Genre: @Html.DisplayFor(x => items[i].Type)</p>
                         <p>@Html.DisplayFor(x => items[i].YearOfRelease)</p>

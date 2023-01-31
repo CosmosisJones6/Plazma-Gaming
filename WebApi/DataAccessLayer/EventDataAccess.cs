@@ -1,6 +1,6 @@
 ﻿using System.Data.SqlClient;
 using WebApi.ModelLayer;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+
 
 namespace WebApi.DataAccessLayer
 {
