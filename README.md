@@ -3,7 +3,7 @@
 
 ## About the project
 
-Plazma Gaming is an online video game selling service focusing on video games created by individual or small group of developers. We give new game ideas the opportunity to grow and become something bigger by providing a platform for them. 
+Plazma Gaming is an online video game selling service focusing on video games created by individual or small group of developers. We give new game ideas the opportunity to grow and to become something bigger by providing a platform for them. 
 
 This solution hadles both the backend and the frontend with more focus and detail on the backend. This semester project for university was created in Visual Studio .NET 6, using C#, HTML, JavaScript, CSS.
 
@@ -50,7 +50,7 @@ The API is a RESTful web API, that uses HTTP methods to access resources via URL
 
 Also, the API handles a concurrency problem with a transaction, which occures when multiple people want to register for the last place in an event.
 
-The api is secured with bearer tokens, which means, one can only access information through the api if they have the token with the corresponding role sent with the request.
+The api is secured with authentication, which means, one can only access information through the api if they have the token with the corresponding role sent with the request.
 
 When running the API a Swagger interface is available to help with testing.
 
