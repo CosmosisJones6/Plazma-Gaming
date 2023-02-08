@@ -13,7 +13,7 @@ The architecture consists of multiple tiers:
 - (Relational database (not in repository))
 - ASP .NET CORE REST API
 - ASP .NET CORE MVC
-- .Net Windows Forms
+- Windows Forms
 
 
 ![image](https://user-images.githubusercontent.com/69151140/215792153-4857dd6d-7102-4aec-9fa9-3f0f2aaa6491.png)
@@ -29,7 +29,7 @@ MVC stands for Model-View Controller, which is a software architectural pattern.
 ![website](https://user-images.githubusercontent.com/69151140/215776160-317adc53-1a73-4d65-853f-1d9149ff6fcb.gif)
 
 
-## .Net Windows Forms : Desktop App
+## Windows Forms : Desktop App
 
 The desktop application is for modifying information in the database. This application is only used by our staff members, it isn't accessable by the public.
 We have a login form so only authorized people can access the main form.
@@ -62,8 +62,8 @@ Login passwords are salted and hashed with the [BCrypt](https://www.nuget.org/pa
 
 ## Usage
 
-The purpose of this repository is only to show the ways of implementing a distributed system and not to provide a fully functional service, since
-the solution only works if you provide the corresponding database, database credentials and also the tokens for the API access in the MVC and Winforms.
+The purpose of this repository is only to show the ways of implementing the system and not to provide a fully functional service, since
+the solution only works if you provide the corresponding database, database credentials and also the tokens for the API access in the MVC and Windows Forms.
 
 ## Future Considerations
 
