@@ -60,16 +60,3 @@ Login passwords are salted and hashed with the [BCrypt](https://www.nuget.org/pa
 ![swagger](https://user-images.githubusercontent.com/69151140/215794232-d922b94d-3014-46e2-911a-cba27c0af2bb.png)
 
 
-## Usage
-
-The purpose of this repository is only to show the ways of implementing the system and not to provide a fully functional service, since
-the solution only works if you provide the corresponding database, database credentials and also the tokens for the API access in the MVC and Windows Forms.
-
-## Future Considerations
-
-- More security features
-- Uploading API and MVC to webservers to create a fully distributed solution
-- Get a domain name for the website
-- Using a bank api for payment process
-- Implementing profiles on the website
-- More advanced frontend/UI
